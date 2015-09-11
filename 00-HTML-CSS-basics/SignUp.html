@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SignUp</title>
+	</head>
+	<style type="text/css">
+	body
+	{
+		background-color: #716AFF;
+		text-align: center;
+		margin: auto;
+	}
+	article
+	{
+		border: solid;
+		text-align: center;
+		margin: auto;
+	}
+	nav
+	{
+		background-color: #89E6FF;
+		border: solid;
+		text-align: center;
+		float: left;
+		width: 24%;
+		margin: auto;
+	}
+	section
+	{
+		background-color: #FFF22F;
+		border: solid;
+		text-align: center;
+		float: left;
+		width: 48%;
+		margin: auto;
+	}
+	header
+	{
+		background-color: #73C5FF;
+		border: solid;
+		text-align: center;
+		margin: auto;
+	}
+	aside
+	{
+		background-color: #89E6FF;
+		border: solid;
+		text-align: center;
+		float: left;
+		width: 24%;
+		margin: auto;
+	}
+	footer
+	{
+		background-color: #57A975;
+		border: solid;	
+		text-align: center;
+		clear: left;
+		margin: auto;
+	}
+	input:required:invalid
+	{
+ 		border: 2px solid red;
+	}
+ 	input:required:valid
+ 	{
+ 		border: 2px solid green;
+	}
+	</style>
+	<body>
+	<script type='text/javascript'>
+		function validar()
+		{
+			var todo_correcto = true;
+			if(document.getElementById("Name").value.length < 10 )
+			{
+			    todo_correcto = false;
+			}
+			if(document.getElementById("Apellido").value.length < 5 )
+			{
+			    todo_correcto = false;
+			}
+			var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+			var email = document.getElementById("Mail").value;
+			if (!expresion.test(email))
+			{
+			    todo_correcto = false;
+			}
+			if(document.getElementById("Cumpleaños").value == "")
+			{
+			    todo_correcto = false;
+			}
+			if(!todo_correcto)
+			{
+				alert("Some fields are not correct, check them");
+			}
+			else
+			{
+				AgregarGente();
+			}
+			return todo_correcto;
+		}
+		function AgregarGente()
+		{
+			alert("Signing Up");
+			var FirstN="", LastN="", Correo="", BirthD="", Deporte="", BioPers="";
+			with(document)
+			{
+				FirstN.value=getElementById("Name").value;
+				LastN.value=getElementById("Apellido").value;
+				Correo.value=getElementById("Mail").value;
+				BirthD.value=getElementById("Cumpleaños").value;
+				Deporte.value=getElementById("FavSport").value;
+				BioPers.value=getElementById("SBio").value;
+				alert("User Created Succesfully");
+				getElementById("Name").value="";
+				getElementById("Apellido").value="";
+				getElementById("Mail").value="";
+				getElementById("Cumpleaños").value="";
+				getElementById("SBio").value="";
+			}
+		}
+	</script>
+		<header align="center">
+			<br>
+			<div class="logo">
+				<B>SIGN UP PAGE</B>
+				<br>
+				<p><B> Here you can Create an User</B></p>
+			</div>
+		</header>
+		<nav>
+			<br>
+			<a href="Expenses.html">Expenses</a><br>
+			<p>Go and check the Monthly Expenses</p>
+			<br>
+			<a href="Media.html">Media</a>
+			<p>Go and check the Pictures/Videos/Sounds</p>
+			<br>
+			<a href="PracticoHTML-CSS.html">Daily Chores</a><br>
+			<p>Go and check the Daily Chores</p>
+		</nav>
+		<section>
+			<header>
+				<p><B> SignUp</B></p>
+			</header>
+			<article>
+				<h3>
+				<B>Personal Data : </B>
+				</h3>
+				<p><B>First Name ----------> </B> <input title="A First Name is Required" type="text" name="NOM" id="Name" required="required"> </p>
+				<p><B>Last Name ----------> </B> <input title="A Last Name is Required" type="text" name="APE" id="Apellido" required="required"> </p>
+				<p><B>Mail ------------------> </B> <input title="An E-Mail is Required" type="email" name="EMAIL" id="Mail" required="required"> </p>
+				<p><B>Birthday -------------> </B> <input title="A Birthday is Required" type="date" name="BIRTH" id="Cumpleaños" required="required"> </p>
+				<p><B>Favourite Sport ---> </B> <input title="A Sport is Required" type="text" list="FavSport"> </p>
+				<datalist id="FavSport" align="center">
+				<option value="Select an Option"></option>
+				<option value="Football"></option>
+				<option value="Basketball"></option>
+				<option value="Baseball"></option>
+				<option value="Handball"></option>
+				<option value="Rugby"></option>
+				<option value="Hockey"></option>
+				<option value="Judo"></option>
+				<option value="Karate"></option>
+				<option value="Swimming"></option>
+				<option value="Golf"></option>
+				</datalist>
+				<p><B>Short Bio -----------> </B> <input type="text" name="BIO" id="SBio"> </p>
+			<input type="submit" value="Sign Up" onClick="validar()";>
+			<br><br>
+			</article>
+			<footer>
+				<p><B> SignUp</B></p>
+			</footer>
+		</section>
+		<aside>
+			<p>	This is the SignUp Page </p>
+			<p>	You can create users, by completing all the Personal Data boxes </p>
+		</aside>
+		<footer>
+			<p><B> Globant Bootcamp WebUI</B></p>
+		</footer>
+	</body>
+</html>
