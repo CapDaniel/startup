@@ -1,0 +1,76 @@
+html
+{
+  	text-align: center;
+  	background-color: #4CC5ED;
+}
+
+.header
+{
+  	font-size: 40px;
+  	color: blue;
+}
+
+.content
+{
+  	width: 75%;
+  	padding: 5px;
+  	box-sizing: border-box;
+  	-moz-box-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	border-style: solid;
+}
+
+input
+{
+  	margin: 10px;
+}
+
+.footer
+{
+  	clear: both;
+  	background-color: red;
+}
+
+#NAV_Tweets
+{
+  	float: right;
+  	width: 25%;
+  	box-sizing: border-box;
+  	-moz-box-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+	border-style: solid;
+  	border-color: black;
+  	background-color: #35EE24;
+}
+
+.Tweet
+{
+	margin: 5px;
+  	border-style: solid;
+  	border-color: #35EE24;
+}
+
+.Tweet header
+{
+  	font-size: 20px;
+  	color: black;
+  	padding: 5px;
+}
+
+.Tweet img
+{
+  	float: left;
+}
+
+.Tweet p
+{
+  	clear: both;
+}
+
+.Tweet footer
+{
+  	font-size: 10px;
+  	font-weight: bold;
+}
