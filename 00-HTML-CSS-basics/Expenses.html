@@ -5,9 +5,17 @@
 		<title>Expenses</title>
 	</head>
 	<style type="text/css">
+	/*
+	* General comment: if you will be used several time the same attributes, use a class with those attributes and then put it in those elements you want.
+	* E.g: border - text-align;
+	* You can use Classes, to apply the same look and feel for differents elements.
+	 */
 	body
 	{
 		background-color: #716AFF;
+		/*
+		* Is not make sense put a alignment attached to the body element. Because most of elements will not take this attribute.
+		*/
 		text-align: center;
 	}
 	article
@@ -60,6 +68,7 @@
 			</h2>
 		</header>
 		<nav>
+		<!--	Read about nav element !!, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav	-->
 			<br>
 			<a href="SignUp.html">SignUp</a><br>
 			<p>Go and check the SingUp Page</p>
@@ -85,6 +94,7 @@
 				</h3>
 			</article>
 			<footer>
+				<!--be carefull, the <b> element is to remark some part of text. Here is the only text. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b -->
 				<p><B> Expenses</B></p>
 			</footer>
 		</section>

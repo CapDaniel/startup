@@ -5,6 +5,9 @@
 		<title>SignUp</title>
 	</head>
 	<style type="text/css">
+	/*
+	* the same comment as the others HTML files
+	 */
 	body
 	{
 		background-color: #716AFF;
@@ -54,7 +57,7 @@
 	footer
 	{
 		background-color: #57A975;
-		border: solid;	
+		border: solid;
 		text-align: center;
 		clear: left;
 		margin: auto;
@@ -70,8 +73,14 @@
 	</style>
 	<body>
 	<script type='text/javascript'>
+	/*
+	* Get accustomed to put variables names, functions names and comments in english.
+	 */
 		function validar()
 		{
+			/*
+			Define all the variables used inside the function, in the header.
+			 */
 			var todo_correcto = true;
 			if(document.getElementById("Name").value.length < 10 )
 			{
@@ -105,6 +114,9 @@
 		{
 			alert("Signing Up");
 			var FirstN="", LastN="", Correo="", BirthD="", Deporte="", BioPers="";
+			/*
+			don't use with statement: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with
+			 */
 			with(document)
 			{
 				FirstN.value=getElementById("Name").value;
@@ -145,15 +157,16 @@
 			<header>
 				<p><B> SignUp</B></p>
 			</header>
+
 			<article>
 				<h3>
 				<B>Personal Data : </B>
 				</h3>
-				<p><B>First Name ----------> </B> <input title="A First Name is Required" type="text" name="NOM" id="Name" required="required"> </p>
-				<p><B>Last Name ----------> </B> <input title="A Last Name is Required" type="text" name="APE" id="Apellido" required="required"> </p>
-				<p><B>Mail ------------------> </B> <input title="An E-Mail is Required" type="email" name="EMAIL" id="Mail" required="required"> </p>
-				<p><B>Birthday -------------> </B> <input title="A Birthday is Required" type="date" name="BIRTH" id="Cumpleaños" required="required"> </p>
-				<p><B>Favourite Sport ---> </B> <input title="A Sport is Required" type="text" list="FavSport"> </p>
+				<p><B>First Name <!-- why use this ? -->----------> </B> <input title="A First Name is Required" type="text" name="NOM" id="Name" required="required"> </p>
+				<p><B>Last Name <!-- why use this ? --> ----------> </B> <input title="A Last Name is Required" type="text" name="APE" id="Apellido" required="required"> </p>
+				<p><B>Mail <!-- why use this ? --> ------------------> </B> <input title="An E-Mail is Required" type="email" name="EMAIL" id="Mail" required="required"> </p>
+				<p><B>Birthday <!-- why use this ? --> -------------> </B> <input title="A Birthday is Required" type="date" name="BIRTH" id="Cumpleaños" required="required"> </p>
+				<p><B>Favourite Sport <!-- why use this ? --> ---> </B> <input title="A Sport is Required" type="text" list="FavSport"> </p>
 				<datalist id="FavSport" align="center">
 				<option value="Select an Option"></option>
 				<option value="Football"></option>
@@ -167,8 +180,9 @@
 				<option value="Swimming"></option>
 				<option value="Golf"></option>
 				</datalist>
-				<p><B>Short Bio -----------> </B> <input type="text" name="BIO" id="SBio"> </p>
+				<p><B>Short Bio <!-- why use this ? --> -----------> </B> <input type="text" name="BIO" id="SBio"> </p>
 			<input type="submit" value="Sign Up" onClick="validar()";>
+			<!--missing reset button-->
 			<br><br>
 			</article>
 			<footer>
