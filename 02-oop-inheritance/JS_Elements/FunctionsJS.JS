@@ -1,3 +1,4 @@
+/*--Constructor--*/
 var Movie = (function()
 {
     function Movie()
