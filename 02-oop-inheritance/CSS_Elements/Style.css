@@ -1,0 +1,33 @@
+html
+{
+  	text-align: center;
+  	background-color: #4CC5ED;
+}
+
+.header
+{
+  	font-size: 40px;
+  	color: blue;
+}
+
+.content
+{
+  	width: 75%;
+  	padding: 5px;
+  	box-sizing: border-box;
+  	-moz-box-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	border-style: solid;
+}
+
+input
+{
+  	margin: 10px;
+}
+
+.footer
+{
+  	clear: both;
+  	background-color: red;
+}
