@@ -1,91 +1,126 @@
+var Movie = (function()
+{
+    function Movie()
+    {    
+        var Attributes = {};
+        var Actors = new Array();
+        this.set = function(attr, value)
+        {
+            Attributes[attr] = value;
+        }
+        this.get = function(attr)
+        {
+            return Attributes[attr];
+        }
+        this.addActor = function(Actor)
+        {
+            Actors[Actors.length] = Actor;
+        }
+        this.showActors = function()
+        {
+            console.log("Actors of " + this.get("Title") + ":");
+            for (var i in Actors)
+            {
+                console.log(" - " + Actors[i].getName());
+            }
+        }
+    }
+    // Methods
+    Movie.prototype.constructor = Movie;
+    Movie.prototype.play = function()
+    {   
+        $(this).trigger("Playing");
+        return this;
+    }
+    Movie.prototype.stop = function()
+    {
+        $(this).trigger("Stopped");
+        return this;
+    }
+    return Movie;
+})();
+
+/* -------------------- MOVIE OBSERVER -------------------- */
+var MovieObserver = function(Movie)
+{
+    $(Movie).on("Playing", function()
+    {
+        console.log("[MovieObserver] Playing " + this.get("Title"));
+    });
+    $(Movie).on("Stopped", function()
+    {
+        console.log("[MovieObserver] Stopped " + this.get("Title"));
+    });
+}
+
+/* -------------------- DOWNLOADABLE MOVIE -------------------- */
+function DownloadableMovie(Title)
+{
+    this.constructor(Title);
+}
+DownloadableMovie.prototype = new Movie();
+DownloadableMovie.prototype.download = function()
+{
+    console.log("Downloading " + this.get("Title"));
+    return this;
+};
+
+/* -------------------- MIXIN -------------------- */
+function mixin(dest, Source)
+{
+    for (var i in Source)
+    {
+        if (source.hasOwnProperty(i))
+        {
+            dest[i] = Source[i];
+        }
+    }
+    return dest;
+}
+var Social = 
+{
+    share: function(FriendName)
+    {
+        console.log("Sharing " + this.get("Title") + " with " + FriendName);
+    },
+    like: function()
+    {
+        console.log("Liked " + this.get("Title"));
+    }
+};
+
+// Mixin
+mixin(Movie.prototype, Social);
+
+
+/* -------------------- ACTOR -------------------- */
+var Actor = function(Name)
+{
+    var Name = Name;
+    this.getName = function ()
+    {
+        return Name;
+    }
+}
+var Titanic = new Movie();
+var TitanicObserver = new MovieObserver(titanic);
+var Terminator = new Movie();
+var TerminatorObserver = new MovieObserver(terminator);
+// Downloadable
+var Thor = new DownloadableMovie();
+var ThorObserver = new MovieObserver(thor);
+// Actors
+var Leonardo = new Actor("Leonardo DiCaprio");
+var Kate = new Actor("Kate Winslet");
 $(document).ready(function()
 {
-    $('#TXT_Hide').hide();
-    $('#TXT_Name').focus();
-    $('#TXT_Hide').fadeIn(1000);
-    $('#BTN_Accept').click(function()
-    {
-        var value=$('#TXT_Name').val();
-        $.ajax(
-        {
-            url:"http://bootcamp.aws.af.cm/welcome/"+value,
-            dataType: 'json',
-            success: function(data)
-            {
-                if (data.error){
-                    $('#Response').text(data.error);
-                    $('#Response').addClass('error');
-                }
-                else{
-                    $('#Response').text(data.response);
-                    $('#Response').removeClass('error');
-                }
-            },
-            error: function(textStatus){
-                $('#TXT_Error').text(textStatus);
-                $('#TXT_Error').addClass('error');
-            },
-        });
-        $('#TXT_Name').val('');
-    });
-    $('#BTN_Search').click(function()
-    {
-        var search=$('#TXT_Search').val();
-        if (search=='')
-        {
-             $('#TXT_Error').text("First, enter an album");
-             $('#TXT_Error').addClass('error');
-        }
-        else
-        {
-            $.ajax(
-            {
-                url: "https://api.spotify.com/v1/search",
-                data: "q="+search+"&type=album",
-                dataType: 'json',
-                success: function(data)
-                {
-                    $('.albumnes').html('');
-                    if (data.albums.total==0){
-                        $('#TXT_Error').text("Artist not found :(");
-                        $('#TXT_Error').addClass('error');
-                    }
-                    else
-                    {
-                        $('#TXT_Error').text('');
-                        $('#TXT_Error').removeClass('error');
-                        $.each(data.albums['items'], function(i)
-                        {
-                            var url_date=(data.albums['items'][i].href);
-                            $.ajax(
-                            {
-                                url: url_date,
-                                dataType: 'json',
-                                success: function(data2)
-                                {
-                                    var album="<div class='cont_style'><img class='picture' src="+data.albums['items'][i]['images']['2'].url+">"
-                                         +"<br"+"<p class='text_style'>"+data.albums['items'][i].type+"</p>"
-                                         +"<p class='text_style'>"+data.albums['items'][i].name+"</p>"
-                                         +"<p class='text_style'>"+data2.release_date+"</p>"
-                                         +"<a class='link' href="+data.albums['items'][i].external_urls.spotify+">Go to album</a><br><br></div>";                                
-                                         $('.albumnes').append(album);
-                                },
-                                error: function(textStatus)
-                                {
-                                    $('#TXT_Error').text(textStatus);
-                                    $('#TXT_Error').addClass('error');
-                                },
-                            });
-                        });
-                    }
-                },
-                error: function(textStatus)
-                {
-                    $('#TXT_Error').text(textStatus);
-                    $('#TXT_Error').addClass('error');
-                },
-            });
-        }
-        $('#TXT_Search').val('');
-    });
+    Titanic.set("title", "Titanic");
+    Terminator.set("title", "Terminator");
+    Thor.set("title", "Thor");
+    Titanic.play();
+    Terminator.stop();
+    // Actors
+    Titanic.addActor(Leonardo);
+    Titanic.addActor(Kate);
+    Titanic.showActors();
 });
