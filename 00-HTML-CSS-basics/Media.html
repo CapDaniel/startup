@@ -5,9 +5,17 @@
 		<title>Media</title>
 	</head>
 	<style type="text/css">
+	/*
+	* General comment: if you will be used several time the same attributes, use a class with those attributes and then put it in those elements you want.
+	* E.g: border - text-align - margin;
+	* You can use Classes, to apply the same look and feel for differents elements.
+	 */
 	body
 	{
 		background-color: #716AFF;
+		/*
+		* Is not make sense put a alignment attached to the body element. Because most of elements will not take this attribute.
+		*/
 		text-align: center;
 		margin: auto;
 	}
@@ -61,12 +69,14 @@
 	}
 	</style>
 	<body>
+	<!-- try to never put attributes in-line. Use CSS to centered alignment -->
 		<header align="center">
 			<h2>
 				MEDIA
 			</h2>
 		</header>
 		<nav>
+		<!--	Read about nav element !!, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav	-->
 			<br>
 			<a href="Expenses.html">Expenses</a><br>
 			<p>Go and check the Monthly Expenses</p>
@@ -84,33 +94,39 @@
 			<article>
 				<p><B>Two Steps From Hell - Protectors of Earth</B></p>
 				<audio controls="controls">
+				<!--use relatives path -->
 					<source src="D:\GLOBANT\AudioTest.mp3" type="audio/mp3" />
 					TU NAVEGADOR NO ES COMPATIBLE CON HTML5
 				</audio>
 				<br>
 				<p><B>Command & Conquer (1995) - Act on Instinct</B></p>
 				<audio controls="controls">
+				<!--use relatives path -->
 					<source src="D:\GLOBANT\Act_On_Instinct.mp3" type="audio/mp3" />
 					TU NAVEGADOR NO ES COMPATIBLE CON HTML5
 				</audio>
 				<br>
 				<p><B>Yellowcard - Breathing</B></p>
 				<audio controls="controls">
+				<!--use relatives path -->
 					<source src="D:\GLOBANT\Yellowcard.mp3" type="audio/mp3" />
 					TU NAVEGADOR NO ES COMPATIBLE CON HTML5
 				</audio>
 				<br>
 				<br>
 				<p><B>Batman The Dark Knight - The Joker and Harvey Dent</B></p>
+				<!--use relatives path -->
 				<video src="D:\GLOBANT\VideoTest.mp4" width="480" height="320" controls>
 					TU NAVEGADOR NO ES COMPATIBLE CON HTML5
 				</video>
 			</article>
 			<footer>
+			<!--be carefull, the <b> element is to remark some part of text. Here is the only text. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b -->
 				<p><B> Media Items</B></p>
 			</footer>
 		</section>
 		<aside>
+		<!--use relatives path -->
 			<img src="D:\GLOBANT\ImgTest.jpg" width="325">
 			<br>
 			<p><B>Twisted Fate and Evelyn</B></p>

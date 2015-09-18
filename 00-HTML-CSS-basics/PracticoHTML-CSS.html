@@ -8,6 +8,10 @@
 	body
 	{
 		background-color: #716AFF;
+			/*
+		* Is not make sense put a alignment attached to the body element. Because most of elements will not take this attribute.
+		* You can use Classes, to apply the same look and feel for differents elements.
+		*/
 		text-align: center;
 	}
 	article
@@ -54,6 +58,7 @@
 	}
 	</style>
 	<body>
+	<!-- try to never put attributes in-line. Use CSS to centered alignment -->
 		<header align="center">
 			<br>
 			<div class="logo">
@@ -62,7 +67,9 @@
 				<p><B> Here are the list of the Daily Chores</B></p>
 			</div>
 		</header>
+		<!-- try to never put attributes in-line. Use CSS to centered alignment -->
 		<nav align="center">
+		<!--	Read about nav element !!, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav	-->
 			<br>
 			<a href="Expenses.html">Expenses</a><br>
 			<p>Go and check the Monthly Expenses</p>
@@ -73,6 +80,7 @@
 			<a href="SignUp.html">SignUp</a><br>
 			<p>Go and check the SignUp Page</p>
 		</nav>
+		<!-- try to never put attributes in-line. Use CSS to centered alignment -->
 		<section align="center">
 			<header>
 				<p><B> Daily Chores</B></p>
@@ -95,6 +103,9 @@
 				<p><B> Daily Chores</B></p>
 			</footer>
 		</section>
+		<!-- Read about <aside> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
+		If have other text, where you are referring, in that case will be correctly applied. But in this case, you don't have content connected tangentially.
+		-->
 		<aside>
 			<p>	This are the simples Daily Chores that i do each day. </p>
 			<p>	Sometimes or somedays it change, depending of the day </p>
