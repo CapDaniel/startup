@@ -1,4 +1,3 @@
-/*--Constructor--*/
 var Movie = (function()
 {
     function Movie()
@@ -115,9 +114,9 @@ var Leonardo = new Actor("Leonardo DiCaprio");
 var Kate = new Actor("Kate Winslet");
 $(document).ready(function()
 {
-    Titanic.set("title", "Titanic");
-    Terminator.set("title", "Terminator");
-    Thor.set("title", "Thor");
+    Titanic.set("Title", "Titanic");
+    Terminator.set("Title", "Terminator");
+    Thor.set("Title", "Thor");
     Titanic.play();
     Terminator.stop();
     // Actors
