@@ -9,7 +9,9 @@ html
   	font-size: 40px;
   	color: blue;
 }
-
+/*
+ * defined but never used
+ */
 .content
 {
   	width: 75%;
