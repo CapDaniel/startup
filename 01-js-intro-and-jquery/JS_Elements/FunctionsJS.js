@@ -5,6 +5,9 @@ $(document).ready(function()
      * What is the difference between css visibility property and display property ?
      * What is the difference between jquery hide / show and fadeIn / fadeOut ?
      * Why you don't manipulate this property from css?
+     *
+     * Pay attention to the details. Take a look how other library like jquery, as naming variables, functions and files.
+     * Your way to name all!! Yours is not related with any standard coding.
      */
     $('#TXT_Hide').hide();
     $('#TXT_Name').focus();
