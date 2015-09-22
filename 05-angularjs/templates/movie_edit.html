@@ -1,0 +1,60 @@
+<form ng-submit='movie_edit()'>
+	<fieldset>
+	<legend>Edit movie</legend>
+	<ul>
+		<li>
+			<label for="name">Name: </label>
+			<input ng-model='movie.name' type="text" name="name" id="name" value="{{movie.name}}">
+		</li>
+		<li>
+			<label for="description">Description:</label></br>
+			<textarea ng-model='movie.description' name="description" id="description" cols="30" rows="6" value='{{movie.description}}'></textarea>
+		</li>
+		<li>
+			<label for="image">Image: </label>
+			<input ng-model='movie.image' type="text" name="image" id="image" value="{{movie.image}}">
+		</li>
+		<li>
+			<label for="trailer">Trailer: </label>
+			<input ng-model='movie.trailer' type="text" name="trailer" id="trailer" value="{{movie.trailer}}">
+		</li>
+		<li>
+			<label for="imdb">Link IMDB: </label>
+			<input ng-model='movie.imdb' type="text" name="imdb" id="imdb" value="{{movie.imdb}}">
+		</li>
+		<li>
+			<label for="year">Year: </label>
+			<input ng-model='movie.year' type="number" name="year" id="year" value="{{movie.year}}">
+		</li>
+		<li>
+			<label for="director">Director: </label>
+			<input ng-model='movie.director' type="text" name="director" id="director" value="{{movie.director}}">
+		</li>
+		<li>
+			<label for="duration">Duration: </label>
+			<input ng-model='movie.duration' type="text" name="duration" id="duration" value="{{movie.duration}}">
+		</li>
+		<li>
+			<label for="genre">Genre: </label>
+			<input ng-model='movie.genre' type="text" name="genre" id="genre" value="{{movie.genre}}">
+		</li>
+		<li>
+			<label for="actor0">Actor: </label>
+			<input ng-model='actor0' type="text" name="actor0" id="actor0" value="">
+		</li>	
+		<li>
+			<label for="actor1">Actor: </label>
+			<input ng-model='actor1' type="text" name="actor1" id="actor1" value="">
+		</li>
+		<li>
+			<label for="actor2">Actor: </label>
+			<input ng-model='actor2' type="text" name="actor2" id="actor2" value="">
+		</li>
+	</ul>
+	<ul>
+		<li>
+			<input class='button' type="submit" name='submit' id='submit' value='Edit Movie'>
+		</li>
+	</ul>
+	</fieldset>
+</form>

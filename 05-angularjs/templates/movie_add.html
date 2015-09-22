@@ -1,0 +1,59 @@
+<form ng-submit='movie_add()'>
+	<fieldset>
+	<legend>Add a New Movie</legend>
+	<ul>
+		<li>
+			<label for="name">Name: </label>
+			<input ng-model='name' type="text" name="name" id="name" value="">
+		</li>
+		<li>
+			<label for="description">Description :</label></br>
+			<textarea ng-model='description' name="description" id="description" cols="30" rows="10"></textarea></li>
+		<li>
+			<label for="image">Image : </label>
+			<input ng-model='image' type="text" name="image" id="image" value="">
+		</li>
+		<li>
+			<label for="trailer">Trailer : </label>
+			<input ng-model='trailer' type="text" name="trailer" id="trailer" value="">
+		</li>
+		<li>
+			<label for="imdb">Link IMDB : </label>
+			<input ng-model='imdb' type="text" name="imdb" id="imdb" value="">
+		</li>
+		<li>
+			<label for="year">Year : </label>
+			<input ng-model='year' type="number" name="year" id="year" value="">
+		</li>
+		<li>
+			<label for="director">Director : </label>
+			<input ng-model='director' type="text" name="director" id="director" value="">
+		</li>
+		<li>
+			<label for="duration">Duration : </label>
+			<input ng-model='duration' type="text" name="duration" id="duration" value="">
+		</li>
+		<li>
+			<label for="genre">Genre : </label>
+			<input ng-model='genre' type="text" name="genre" id="genre" value="">
+		</li>
+		<li>
+			<label for="actor0">Actor : </label>
+			<input ng-model='actor0' type="text" name="actor0" id="actor0" value="">
+		</li>	
+		<li>
+			<label for="actor1">Actor : </label>
+			<input ng-model='actor1' type="text" name="actor1" id="actor1" value="">
+		</li>
+		<li>
+			<label for="actor2">Actor : </label>
+			<input ng-model='actor2' type="text" name="actor2" id="actor2" value="">
+		</li>
+	</ul>
+	<ul>
+		<li>
+			<input class='button' type="submit" name='submit' id='submit' value='Add Movie'>
+		</li>
+	</ul>
+	</fieldset>
+</form>

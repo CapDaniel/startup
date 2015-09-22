@@ -1,0 +1,37 @@
+<div class="panel details clearfix">
+   	<div class="row movie_details">
+		<div class="large-4 columns">
+    		<img id='imgDetails' class="left" ng-src="{{movie.image}}" alt="Movie image">
+		</div>
+		<div class="large-8 columns">
+		    <h3>{{movie.name}} <span class='year'>({{movie.year}})</span></h3>
+		    <p><span class='special'>Description:</span> {{movie.description}}</p>
+			<p><span class='special'>Director:</span> {{movie.director}}</p>
+		    <p><span class='special'>Duration:</span> {{movie.duration}}</p>
+		    <p><span class='special'>Genre:</span> {{movie.genre}}</p>
+		    <p><span class='special'><a href="{{movie.imdb}}" target="_blank">See in IMDB</a></span></p>
+			<p ng-init='showActors = false'>
+				<button class='round medium' ng-click="showActors = true" ng-hide="showActors === true">Show Actors</button>
+			    <button class='round' ng-click="showActors = false" ng-show="showActors === true">Hide Actors</button>
+			    <ul ng-show="showActors === true" ng-hide="showActors === false">
+			    	<span class='special'>Actors:</span>
+					<li class='actor' ng-repeat="actor in movie.actors">
+						<i class="fa fa-caret-right"></i> {{actor}}
+					</li>
+				</ul>
+			</p>
+			<p ng-init="showTrailer = false">
+				<span class='special'>Trailer</span>
+				<a href="" ng-click="showTrailer = true">
+					<i ng-hide="showTrailer === true" class="fa fa-chevron-circle-down"></i>
+				</a>
+				<a href="" ng-click="showTrailer = false">
+					<i ng-show="showTrailer === true" class="fa fa-chevron-circle-up"></i>
+				</a>
+			</p>
+			<div ng-show="showTrailer === true" ng-hide="showTrailer === false" class="flex-video">
+				<iframe width="420" height="315" ng-src="{{movie.trailer | trustUrl}}" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
