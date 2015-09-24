@@ -2,9 +2,12 @@
 var Movie = (function()
 {
     function Movie()
-    {    
+    {
         var Attributes = {};
         var Actors = new Array();
+        /*
+        * try to use "set"  like a prefix and add the name of the value you will set. The same for "get".
+         */
         this.set = function(attr, value)
         {
             Attributes[attr] = value;
@@ -26,10 +29,12 @@ var Movie = (function()
             }
         }
     }
+
     // Methods
+    // construct of what ?
     Movie.prototype.constructor = Movie;
     Movie.prototype.play = function()
-    {   
+    {
         $(this).trigger("Playing");
         return this;
     }
@@ -42,6 +47,7 @@ var Movie = (function()
 })();
 
 /* -------------------- MOVIE OBSERVER -------------------- */
+// Why use jQuery?
 var MovieObserver = function(Movie)
 {
     $(Movie).on("Playing", function()
@@ -69,16 +75,20 @@ DownloadableMovie.prototype.download = function()
 /* -------------------- MIXIN -------------------- */
 function mixin(dest, Source)
 {
+    /*
+    * Javascript is case sensitive !!
+    * this error is common, so use lowercase to name variables in JS. Pay attention to the "S"
+     */
     for (var i in Source)
     {
-        if (source.hasOwnProperty(i))
+        if (Source.hasOwnProperty(i))
         {
             dest[i] = Source[i];
         }
     }
     return dest;
 }
-var Social = 
+var Social =
 {
     share: function(FriendName)
     {
@@ -104,12 +114,15 @@ var Actor = function(Name)
     }
 }
 var Titanic = new Movie();
-var TitanicObserver = new MovieObserver(titanic);
+// pay attention to names, Titanic != titanic !!!
+var TitanicObserver = new MovieObserver(Titanic);
 var Terminator = new Movie();
-var TerminatorObserver = new MovieObserver(terminator);
+// pay attention to names, Terminator != terminator !!!
+var TerminatorObserver = new MovieObserver(Terminator);
 // Downloadable
 var Thor = new DownloadableMovie();
-var ThorObserver = new MovieObserver(thor);
+// pay attention to names, Thor != thor !!!
+var ThorObserver = new MovieObserver(Thor);
 // Actors
 var Leonardo = new Actor("Leonardo DiCaprio");
 var Kate = new Actor("Kate Winslet");
