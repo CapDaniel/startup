@@ -1,4 +1,4 @@
-#Summary Topic2 - OOP in JS
+#Summary Topic3 - OOP in JS
 
 Don't use any more in javascript uppercase to name the directorys, files, variables or modules. Read the next documentation.
 * https://github.com/globant-ui/javascript-style-guide#naming-conventions
