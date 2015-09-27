@@ -1,0 +1,48 @@
+html
+{
+  background-color: #1200B0;
+  font-family: Verdana, sans-serif;
+  border: solid;
+  border-width: .4em;
+}
+
+body
+{
+  background-color: #829DFF;
+  font-family: Verdana, sans-serif;
+  border: solid;
+  border-width: .4em;
+}
+
+
+h1
+{
+    color: #B700E5;
+    background-color: #FFE414;
+    text-align: center;
+    font-variant: small-caps;
+    border: solid;
+    border-width: .2em;
+}
+
+.btn
+{
+  width: 6em;
+  height: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: #525252;
+  color: #0ABCDB;
+}
+
+.content-exc
+{
+  color: red;
+}
+
+.txtArea
+{
+    color: #CA1111;
+    font-weight: bold;
+    text-align: left;
+}
