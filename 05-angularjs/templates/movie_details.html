@@ -5,6 +5,7 @@
 		</div>
 		<div class="large-8 columns">
 		    <h3>{{movie.name}} <span class='year'>({{movie.year}})</span></h3>
+		    <!-- bad use of <p> element. Read about when use <p>. -->
 		    <p><span class='special'>Description:</span> {{movie.description}}</p>
 			<p><span class='special'>Director:</span> {{movie.director}}</p>
 		    <p><span class='special'>Duration:</span> {{movie.duration}}</p>
@@ -20,6 +21,7 @@
 					</li>
 				</ul>
 			</p>
+			 <!-- bad use of <p> element. Read about when use <p>. -->
 			<p ng-init="showTrailer = false">
 				<span class='special'>Trailer</span>
 				<a href="" ng-click="showTrailer = true">
@@ -29,6 +31,7 @@
 					<i ng-show="showTrailer === true" class="fa fa-chevron-circle-up"></i>
 				</a>
 			</p>
+			<!-- hide or show with CSS and only put a single condition -->
 			<div ng-show="showTrailer === true" ng-hide="showTrailer === false" class="flex-video">
 				<iframe width="420" height="315" ng-src="{{movie.trailer | trustUrl}}" frameborder="0" allowfullscreen></iframe>
 			</div>

@@ -1,6 +1,7 @@
 <form ng-submit='movie_edit()'>
 	<fieldset>
 	<legend>Edit movie</legend>
+	<!-- bad form structure -->
 	<ul>
 		<li>
 			<label for="name">Name: </label>
@@ -41,7 +42,7 @@
 		<li>
 			<label for="actor0">Actor: </label>
 			<input ng-model='actor0' type="text" name="actor0" id="actor0" value="">
-		</li>	
+		</li>
 		<li>
 			<label for="actor1">Actor: </label>
 			<input ng-model='actor1' type="text" name="actor1" id="actor1" value="">
@@ -53,6 +54,7 @@
 	</ul>
 	<ul>
 		<li>
+		<!-- Don't use reserved words to manipulate the elements -->
 			<input class='button' type="submit" name='submit' id='submit' value='Edit Movie'>
 		</li>
 	</ul>

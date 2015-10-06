@@ -1,6 +1,7 @@
 @media all and (max-width: 519px){
 	html
 	{
+		/* use em not percentage */
 		font-size: 70%;
 	}
 
@@ -66,7 +67,7 @@
 	{
 		font-size: 100%;
 	}
-	
+
 	#imgList
 	{
 		width: 176px;
@@ -135,5 +136,5 @@ form
 #buttonAdd
 {
 	margin-top: 5px;
-	
+
 }
